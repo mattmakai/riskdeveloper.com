@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block meta_header %}
+<meta name="description" content="Risk Developer is an open source book on risk management topics. Learn more on the table of contents page.">
+{% endblock %}
+
+{% block title %}Table of Contents for {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1>Table of Contents</h1>
+        <div class="row">
+            <div class="col-md-6">
+              <div class="list-group">
+                    <h3>1. <a href="/introduction.html">Introduction</a></h3>
+                    <h4 class="toc-subsection">1.1 <a href="#">Finance</a></h4>
+                    <div><a href="#" class="subsection">Risk</a></div>
+
+                    <h4 class="toc-subsection">1.2 Risk Management</h4>
+                    <div><a href="#" class="subsection">Modeling</a></div>
+                    <div><a href="#" class="subsection">Tools</a></div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="list-group">
+                    <h3>2. <a href="#">Operations</a></h3>
+                    <h4 class="toc-subsection">9.1 <a href="#">Monitoring</a></h4>
+                    <div><a href="#" class="subsection">Logging</a></div>
+
+                    <h4 class="toc-subsection">9.2 Performance</h4>
+                    <div><a href="/caching.html" class="subsection">Caching</a></div>
+                    <div><a href="/browser-performance.html" class="subsection">Browser Performance</a></div>
+
+                    <h4 class="toc-subsection">9.3 <a href="#">Analytics</a></h4>
+                    <div><a href="#" class="subsection">Tools</a></div>
+                    <div><a href="/google-analytics.html" class="subsection">Google Analytics</a></div>
+
+                    <h3>3. Meta</h3>
+                    <div class="toc-more-indent">
+                        <a href="/change-log.html">Change log</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "sidebar.html" %}
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2><a href="/blog.html">Blog Posts</a></h2>
+        {% for a in articles %}
+            <h4 style="padding-bottom: 6px; line-height: 1.25em;"><a href="/blog/{{ a.slug }}.html">{{ a.title }}</a></h4>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
